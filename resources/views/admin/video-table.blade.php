@@ -9,7 +9,7 @@
     
    <div class="box box-primary">
 	<div class="box-header with-border">
-		<h3 class="box-title">Gambar Masjid</h3>
+		<h3 class="box-title">Video Masjid</h3>
 	</div>
 	<div class="box-body">
 		<div class="row">

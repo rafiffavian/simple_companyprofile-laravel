@@ -87,6 +87,7 @@
   </a>
 </div>
 </header>
+@include('error-form')
 <div id="video">
   <iframe src="{{\App\Video::orderBy('created_at','desc')->first()->file}}" width="900px" height="80%" loop="true" frameborder="0" style="margin-left: 250px;margin-top: 80px"></iframe>
 </div>
@@ -293,18 +294,18 @@
     <div class="col-md-8 col-md-offset-2">
       <form name="sentMessage" id="contactForm" novalidate method="post" action="{{ route('index.store') }}">
         @include('sweetalert::alert')
-
+        @include('error-form')
         @csrf
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <input type="text" id="name" class="form-control" placeholder="Name" required="required" name="name" value="{{old('name')}}">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="" name="name" value="{{old('name')}}">
               <p class="help-block text-danger"></p>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <input type="email" id="email" class="form-control" placeholder="Email" required="required" name="email" value="{{old('email')}}">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="" name="email" value="{{old('email')}}">
               <p class="help-block text-danger"></p>
             </div>
           </div>

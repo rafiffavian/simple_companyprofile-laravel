@@ -33,7 +33,7 @@
 					</thead>
 					<tbody>
 						
-		    				@foreach(Auth::user()->daftarMenu()->get() as $v)
+		    				@foreach(Auth::user()->daftarMenu()->where('id_menu',2)->get() as $v)
 		    					<tr>
 		    						<td>{{$v->name}}</td>
 		    						<td>{{$v->tipeMenu->name}}</td>

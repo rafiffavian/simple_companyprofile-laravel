@@ -21,9 +21,9 @@
                   <input type="text" name="name" value="{{old('name')}}" class="form-control" required=""><br>
                   <label for="pengisi_acara">Kategori</label> <!-- for di dalem lebel itu merujuk pada id -->
                   <select name="id_menu" id="" class="form-control">
-                    @foreach(App\Menu::all() as $item)
-                      <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach  
+                    
+                      <option value="2">Main Course</option>
+                    
                   </select><br>
                   <label for="pengisi_acara">Description</label> <!-- for di dalem lebel itu merujuk pada id -->
           				<textarea name="description" id="" cols="30" rows="10" class="form-control">{{old('description')}}</textarea>

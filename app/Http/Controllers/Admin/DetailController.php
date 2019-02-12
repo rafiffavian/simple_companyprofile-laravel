@@ -12,6 +12,7 @@ class DetailController extends Controller
 {
     public function index()
     {
+        // test
     	// $about = About::all();
     	// return view('admin.detail-table', compact('about'));
         $about= Auth::user()->aboutGusto()->get();

@@ -16,12 +16,13 @@
           	<div class="col-md-12">
           		<form action="{{ route('admin.frontup.update',$donasi->id) }}" method="post" enctype="multipart/form-data">
           			@csrf
+                @include('error-form')
                 <input type="hidden" value="put" name="_method">
           			<div class="form-group">
           				<label for="pengisi_acara">Tittle</label> <!-- for di dalem lebel itu merujuk pada id -->
                   <input type="text" name="title" class="form-control" value="{{$donasi->title}}"><br>
                   <label for="pengisi_acara">Upload Gambar</label> <!-- for di dalem lebel itu merujuk pada id -->
-                  <input type="file" name="file" id="pengisi_acara" class="form-control" required="" "><br>
+                  <input type="file" name="file" id="pengisi_acara" class="form-control"><br>
                   <label for="pengisi_acara">Description</label> <!-- for di dalem lebel itu merujuk pada id -->
           				<textarea name="description" id="" cols="30" rows="10" class="form-control">{{$donasi->description}}</textarea>
           			</div>

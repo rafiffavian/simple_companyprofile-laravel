@@ -16,6 +16,7 @@
           	<div class="col-md-12">
           		<form action="{{ route('admin.detail.store') }}" method="post" enctype="multipart/form-data">
           			@csrf
+                @include('error-form')
           			<div class="form-group">
                   <label for="pengisi_acara">Upload Gambar</label> <!-- for di dalem lebel itu merujuk pada id -->
                   <input type="file" name="file" id="pengisi_acara" class="form-control" required="" value="{{old('file')}}"><br>

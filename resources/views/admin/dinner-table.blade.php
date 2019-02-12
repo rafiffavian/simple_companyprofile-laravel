@@ -9,7 +9,7 @@
     
    <div class="box box-primary">
 	<div class="box-header with-border">
-		<h3 class="box-title">Table MainCourse</h3>
+		<h3 class="box-title">Table Dinner</h3>
 	</div>
 	<div class="box-body">
 		<div class="row">

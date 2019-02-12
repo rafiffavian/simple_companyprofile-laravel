@@ -25,7 +25,7 @@ class FrontupController extends Controller
     	$request->validate([
     		'title' => 'required',
     		'description' => 'required',
-    		'file' => 'required'
+    		'file' => 'required|image|max:10000000000000000000|mimes:jpg,png,jpeg,gif'
 
     	]);
        
@@ -51,6 +51,7 @@ class FrontupController extends Controller
        $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'file' => 'image|required|max:10000000000000000000|mimes:jpg,png,jpeg,gif'
 
         ]);
        $data = (array)$request->except(['_token','file']);

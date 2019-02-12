@@ -22,7 +22,7 @@ class ChefController extends Controller
     	$request->validate([
 
     		'name' => 'required',
-    		'file' => 'required',
+    		'file' => 'required|image|max:2048',
     		'description' => 'required'
     	]);
     	 $path = $request->file('file')->store('public/chefupload');
@@ -42,6 +42,7 @@ class ChefController extends Controller
     {
         $request->validate([
 
+            'file' => 'required|image|max:2048',
             'name' => 'required',
             'description' =>'required'
         ]);

@@ -16,11 +16,12 @@
           	<div class="col-md-12">
           		<form action="{{ route('admin.chef.store') }}" method="post" enctype="multipart/form-data">
           			@csrf
+                @include('error-form')
           			<div class="form-group">
           				<label for="pengisi_acara">Name</label> <!-- for di dalem lebel itu merujuk pada id -->
                   <input type="text" name="name" class="form-control" value="{{old('name')}}"><br>
                   <label for="pengisi_acara">Upload Gambar</label> <!-- for di dalem lebel itu merujuk pada id -->
-                  <input type="file" name="file" id="pengisi_acara" class="form-control" required="" value="{{ old('file')}}"><br>
+                  <input type="file" name="file" id="pengisi_acara" class="form-control" value="{{ old('file')}}"><br>
                   <label for="pengisi_acara">Description</label> <!-- for di dalem lebel itu merujuk pada id -->
           				<textarea name="description" id="" cols="30" rows="10" class="form-control">{{old('description')}}</textarea>
           			</div>

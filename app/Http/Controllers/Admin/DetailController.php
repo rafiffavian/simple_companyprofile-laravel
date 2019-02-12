@@ -27,7 +27,7 @@ class DetailController extends Controller
 
     		'judul' => 'required',
             'description' =>'required',
-            'file' => 'required'
+            'file' => 'required|image'
     	]);
 
     	$path = $request->file('file')->store('public/Aboutupload');

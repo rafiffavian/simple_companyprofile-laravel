@@ -116,14 +116,25 @@
 <div id="about">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6 about-img" style="background: #444 url({{url(Storage::url($test->file))}}) center center no-repeat !important;"></div>
+      @if($test)
+        <div class="col-xs-12 col-md-6 about-img" style="background: #444 url({{url(Storage::url($test->file))}}) center center no-repeat !important;"></div>
+      @else
+        <div class="col-xs-12 col-md-6 about-img" style="background: #444 url('http://previews.aspirity.com/arent/pic/properties_img_4.jpg') center center no-repeat !important;"></div>
+      @endif  
       <div class="col-xs-12 col-md-3 col-md-offset-1">
         <div class="about-text">
           <div class="section-title">
-            <h2>{{$test->judul}}</h2>
+           @if($test) 
+              <h2>{{$test->judul}}</h2>
+           @else
+              <h2>Data Kosong</h2> 
+           @endif 
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+          @if($test)
+            <p>{{$test->description}}</p>
+          @else
+            <p>data kosong</p>  
+          @endif  
         </div>
       </div>
     </div>
@@ -241,14 +252,13 @@
       <div class="col-md-6">
         <div class="col-md-10 col-md-offset-1">
           <div class="section-title">
-            <h2>Meet Our Chef</h2>
+            <h2>{{$chef->name}}</h2>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+          <p>{{$chef->description}}</p>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="team-img"><img src="img/chef.jpg" alt="..."></div>
+        <div class="team-img"><img src="{{url(Storage::url($chef->file))}}" alt="..."></div>
       </div>
     </div>
   </div>

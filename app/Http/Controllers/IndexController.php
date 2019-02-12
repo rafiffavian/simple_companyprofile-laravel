@@ -19,7 +19,8 @@ class IndexController extends Controller
         $test = \App\About::orderBy('created_at','desc')->first();
         $special = \App\Specialmenu::all();
         $gege = \App\Address::orderBy('created_at','desc')->first();
-    	return view('index',compact(['banner','test','break','Main','special','gege']));
+        $chef = \App\Chefs::orderBy('created_at','desc')->first();
+    	return view('index',compact(['banner','test','break','Main','special','gege','chef']));
     }
     public function store(Request $request)
     {

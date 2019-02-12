@@ -19,7 +19,7 @@
                 @include('error-form')
           			<div class="form-group">
                   <label for="pengisi_acara">Upload Gambar</label> <!-- for di dalem lebel itu merujuk pada id -->
-                  <input type="file" name="file" id="pengisi_acara" class="form-control" required="" value="{{old('file')}}"><br>
+                  <input type="file" name="file" id="pengisi_acara" class="form-control" value="{{old('file')}}"><br>
                   <label for="pengisi_acara">Name</label> <!-- for di dalem lebel itu merujuk pada id -->
                   <input type="text" name="judul" class="form-control" value="{{old('judul')}}"><br>
                   <label for="pengisi_acara">Description</label> <!-- for di dalem lebel itu merujuk pada id -->

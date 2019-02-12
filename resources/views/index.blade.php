@@ -252,13 +252,25 @@
       <div class="col-md-6">
         <div class="col-md-10 col-md-offset-1">
           <div class="section-title">
+           @if($chef) 
             <h2>{{$chef->name}}</h2>
+           @else
+            <h2>Data Kosong</h2> 
+           @endif 
           </div>
-          <p>{{$chef->description}}</p>
+          @if($chef)
+            <p>{{$chef->description}}</p>
+          @else
+            <p>Data Kosong</p>  
+          @endif  
         </div>
       </div>
       <div class="col-md-6">
+      @if($chef)  
         <div class="team-img"><img src="{{url(Storage::url($chef->file))}}" alt="..."></div>
+      @else  
+        <div class="team-img"><img src="http://previews.aspirity.com/arent/pic/properties_img_4.jpg" alt="..."></div>
+      @endif  
       </div>
     </div>
   </div>

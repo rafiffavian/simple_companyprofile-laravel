@@ -17,16 +17,17 @@
           		<div class="box-body">
                 <div class="row">
                   <div class="col-md-12">
-                    <form action="{{ route('admin.detail.update',$about->id) }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('admin.detail.update',$myabout->id) }}" method="post" enctype="multipart/form-data">
                       @csrf
+                      @include('error-form')
                       <input type="hidden" value="put" name="_method" >
                       <div class="form-group">
                           <label for="">Upload Gambar</label>
-                          <input type="file" name="file" required="" class="form-control"><br>
+                          <input type="file" name="file" class="form-control"><br>
                           <label for="">Tittle</label>
-                          <input type="text" name="judul" value="{{$about->judul}}" required="" class="form-control"><br>
+                          <input type="text" name="judul" value="{{$myabout->judul}}" required="" class="form-control"><br>
                           <label for="">Description</label>
-                          <textarea name="description" required="" cols="30" rows="10" class="form-control">{{$about->description}}</textarea>
+                          <textarea name="description" required="" cols="30" rows="10" class="form-control">{{$myabout->description}}</textarea>
                       </div>    
                       <div class="form-group text-right">
                         <button class="btn btn-primary" type="submit">Simpan</button>

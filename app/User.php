@@ -39,4 +39,8 @@ class User extends Authenticatable
         return $this->hasMany(Listmenu::class, 'id_user');
     }
     
+    public function aboutGusto()
+    {
+        return $this->hasMany(About::class, 'id_user');
+    }
 }
